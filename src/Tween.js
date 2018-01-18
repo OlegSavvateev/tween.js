@@ -137,7 +137,7 @@ TWEEN.Tween = function (object) {
 };
 
 TWEEN.Tween.prototype = assign(Object.create(Object.prototype), {
-	to: function to(properties, duration) {
+	to: function (properties, duration) {
 
 		this._valuesEnd = properties;
 
@@ -149,7 +149,7 @@ TWEEN.Tween.prototype = assign(Object.create(Object.prototype), {
 
 	},
 
-	start: function start(time) {
+	start: function (time) {
 
 		TWEEN.add(this);
 
@@ -195,7 +195,7 @@ TWEEN.Tween.prototype = assign(Object.create(Object.prototype), {
 
 	},
 
-	stop: function stop() {
+	stop: function () {
 
 		if (!this._isPlaying) {
 			return this;
@@ -213,14 +213,14 @@ TWEEN.Tween.prototype = assign(Object.create(Object.prototype), {
 
 	},
 
-	end: function end() {
+	end: function () {
 
 		this.update(this._startTime + this._duration);
 		return this;
 
 	},
 
-	stopChainedTweens: function stopChainedTweens() {
+	stopChainedTweens: function () {
 
 		for (var i = 0, numChainedTweens = this._chainedTweens.length; i < numChainedTweens; i++) {
 			this._chainedTweens[i].stop();
@@ -228,84 +228,84 @@ TWEEN.Tween.prototype = assign(Object.create(Object.prototype), {
 
 	},
 
-	delay: function delay(amount) {
+	delay: function (amount) {
 
 		this._delayTime = amount;
 		return this;
 
 	},
 
-	repeat: function repeat(times) {
+	repeat: function (times) {
 
 		this._repeat = times;
 		return this;
 
 	},
 
-	repeatDelay: function repeatDelay(amount) {
+	repeatDelay: function (amount) {
 
 		this._repeatDelayTime = amount;
 		return this;
 
 	},
 
-	yoyo: function yoyo(yoyo) {
+	yoyo: function (yoyo) {
 
 		this._yoyo = yoyo;
 		return this;
 
 	},
 
-	easing: function easing(easing) {
+	easing: function (easing) {
 
 		this._easingFunction = easing;
 		return this;
 
 	},
 
-	interpolation: function interpolation(interpolation) {
+	interpolation: function (interpolation) {
 
 		this._interpolationFunction = interpolation;
 		return this;
 
 	},
 
-	chain: function chain() {
+	chain: function () {
 
 		this._chainedTweens = arguments;
 		return this;
 
 	},
 
-	onStart: function onStart(callback) {
+	onStart: function (callback) {
 
 		this._onStartCallback = callback;
 		return this;
 
 	},
 
-	onUpdate: function onUpdate(callback) {
+	onUpdate: function (callback) {
 
 		this._onUpdateCallback = callback;
 		return this;
 
 	},
 
-	onComplete: function onComplete(callback) {
+	onComplete: function (callback) {
 
 		this._onCompleteCallback = callback;
 		return this;
 
 	},
 
-	onStop: function onStop(callback) {
+	onStop: function (callback) {
 
 		this._onStopCallback = callback;
 		return this;
 
 	},
 
-	update: function update(time) {
+	update: function (time) {
 
 		var property;
 		var elapsed;
